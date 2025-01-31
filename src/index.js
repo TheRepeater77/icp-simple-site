@@ -1,11 +1,9 @@
-// JavaScript to make the rocket follow the cursor
-document.addEventListener('mousemove', function (e) {
-    const rocket = document.getElementById('rocket');
-    const cursorX = e.clientX;
-    const cursorY = e.clientY;
-    
-    // Move the rocket to the mouse position with an offset for better alignment
-    rocket.style.left = `${cursorX - 15}px`;
-    rocket.style.top = `${cursorY - 30}px`;
-  });
-  
+// Get the rocket element
+const rocket = document.getElementById("rocket");
+
+// Track mouse movement
+document.addEventListener("mousemove", (e) => {
+    // Set the rocket position to follow the cursor
+    rocket.style.left = `${e.pageX - 25}px`;
+    rocket.style.top = `${e.pageY - 25}px`;
+});

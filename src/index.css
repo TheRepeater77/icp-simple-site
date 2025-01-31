@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,114 +6,66 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #282c34;
-  color: white;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   text-align: center;
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 50px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-top: 20vh;
-}
-
-header p {
-  font-size: 1.2rem;
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
   margin-bottom: 30px;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 section {
-  padding: 20px;
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
-#about {
-  background-color: #3b3f46;
-  border-radius: 10px;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-#projects {
-  background-color: #4f545c;
-  border-radius: 10px;
+ul {
+  list-style: none;
 }
 
-.project {
-  background-color: #6c757d;
-  border-radius: 5px;
-  margin: 15px;
-  padding: 10px;
-  transition: transform 0.3s ease;
+ul li {
+  font-size: 1.2rem;
+  margin: 5px 0;
 }
 
-.project:hover {
-  transform: scale(1.05);
-}
-
-#contact {
-  background-color: #3b3f46;
-  border-radius: 10px;
+/* Cursor Rocket */
+#rocket {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  clip-path: polygon(50% 0%, 60% 25%, 80% 25%, 90% 50%, 80% 75%, 60% 75%, 50% 100%, 40% 75%, 20% 75%, 10% 50%, 20% 25%, 40% 25%);
+  animation: rocketAnim 1s infinite;
+  pointer-events: none;
 }
 
 /* Rocket Animation */
-.rocket {
-  position: absolute;
-  width: 40px;
-  height: 80px;
-  background-color: #ff5733;
-  clip-path: polygon(50% 0%, 0% 30%, 100% 30%);
-  border-radius: 50%;
-  transition: transform 0.1s ease-out;
-  pointer-events: none; /* So it doesn't interfere with clicks */
-}
-
-.rocket::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 25px;
-  background-color: #f39c12;
-  border-radius: 50%;
-  animation: flame 0.1s infinite alternate;
-}
-
-.rocket .flame {
-  position: absolute;
-  bottom: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 15px;
-  height: 30px;
-  background-color: #ff6347;
-  border-radius: 50%;
-  animation: flame-expansion 0.3s ease-in-out infinite alternate;
-}
-
-@keyframes flame {
+@keyframes rocketAnim {
   0% {
-    transform: translateX(-50%) scaleY(1);
-    opacity: 0.8;
+      transform: rotate(0deg);
+  }
+  50% {
+      transform: rotate(15deg);
   }
   100% {
-    transform: translateX(-50%) scaleY(1.5);
-    opacity: 1;
-  }
-}
-
-@keyframes flame-expansion {
-  0% {
-    transform: translateX(-50%) scaleY(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(-50%) scaleY(2);
-    opacity: 0.4;
+      transform: rotate(0deg);
   }
 }
