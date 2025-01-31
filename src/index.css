@@ -46,6 +46,11 @@ ul li {
   margin: 5px 0;
 }
 
+/* Pong Game Section */
+.pong-game {
+  margin-top: 50px;
+}
+
 /* Cursor Rocket */
 #rocket {
   position: absolute;
